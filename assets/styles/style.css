@@ -14,7 +14,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px; 
+  max-width: 1200px;
   background-color: #010101;
 }
 
@@ -38,7 +38,11 @@ body {
   align-items: center;
   gap: 20px;
 }
-
+.details {
+  font-size: 18px;
+  color: red;
+  border-bottom: 2px solid #bf9000;
+}
 .mission {
   background-color: #010101;
   padding: 20px;
