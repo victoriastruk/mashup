@@ -40,11 +40,14 @@ body {
 }
 .details {
   font-size: 18px;
-  color: red;
+  color: #e57373;
   border-bottom: 2px solid #bf9000;
   text-align: left;
   list-style-type: disc;
   padding-left: 20px;
+}
+a {
+  color: #64b5f6;
 }
 .mission {
   background-color: #010101;
