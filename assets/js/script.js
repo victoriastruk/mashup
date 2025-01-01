@@ -25,6 +25,8 @@ const playButton = document.querySelector(".play-button");
 const playIcon = playButton.querySelector("i");
 const audioPlayer = document.getElementById("backgroundAudio");
 
+audioPlayer.loop = true;
+
 let isPlaying = false;
 
 function updateIcon() {
