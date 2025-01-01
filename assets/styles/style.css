@@ -1,21 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+:root {
+  --font-main: "Russo One", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+  --color-background: #010101;
+  --color-primary: #fff;
+}
 
 body {
-  font-family: "Russo One", sans-serif;
+  font-family: var(--font-main);
   line-height: 1.5;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   box-sizing: border-box;
   background-color: #eff7f6;
+  color: var(--color-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
-  background-color: #010101;
+  max-width: 75rem;
+  background-color: var(--color-background);
 }
 
 .logo {
@@ -25,34 +32,35 @@ body {
 }
 
 .owl {
-  width: 600px;
-  height: 608px;
+  width: 100%;
+  max-width: 37.5rem;
+  min-width: 20rem;
+  max-height: 38rem;
   object-fit: cover;
 }
 
 .wrap {
-  background-color: #010101;
-  color: #fff;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 .details {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #e57373;
   border-bottom: 2px solid #bf9000;
   text-align: left;
   list-style-type: disc;
   padding-left: 20px;
+  padding-top: 15px;
 }
 a {
   color: #64b5f6;
 }
 .mission {
-  background-color: #010101;
+  background-color: var(--color-background);
   padding: 20px;
-  color: #fff;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: 2px solid #bf9000;
@@ -61,16 +69,16 @@ a {
 
 .title {
   letter-spacing: 0;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-style: normal;
   font-weight: normal;
-  line-height: 33.6px;
+  line-height: 2.1rem;
   margin-bottom: 20px;
 }
 .intro {
-  line-height: 24px;
-  color: #efefef;
-  font-size: 16px;
+  line-height: 1.5rem;
+  color: #e0e0e0;
+  font-size: 1rem;
   padding-bottom: 20px;
   border-bottom: 2px solid #bf9000;
 }
@@ -81,19 +89,21 @@ a {
   font-size: 20x;
 }
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
   list-style-type: number;
-  padding: 40px;
-  padding-bottom: 0;
+  padding: 0.9375rem 0.9375rem 1.25rem 1.5625rem;
 }
 
 .btn {
   display: block;
-  margin: 15px 0;
+  margin-top: 10px;
   background-color: #222;
   color: #e0e0e0;
   border: 2px solid #444;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 12px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -104,7 +114,7 @@ a {
 }
 .btn:hover {
   background-color: #555;
-  color: #fff;
+  color: var(--color-primary);
   border-color: #ffd700;
   box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
 }
@@ -115,12 +125,14 @@ a {
 
 .hint {
   display: none;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-secondary);
   font-style: italic;
-  font-size: 18px;
+  font-size: 1.125rem;
+  margin-top: 0.625rem;
 }
 .hint-spoiler {
-  color: #eff7f6;
+  color: #e0e0e0;
+  margin-bottom: 15px;
 }
 strong {
   font-weight: 900;
@@ -129,12 +141,12 @@ strong {
 .play-button {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 25px;
   background-color: #222;
   color: #e0e0e0;
-  border: 2px solid #444;
-  padding: 25px 28px;
-  font-size: 24px;
+  border: 0.125rem solid #444;
+  padding: 1.5625rem 1.75rem;
+  font-size: 1.5rem;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -148,17 +160,17 @@ strong {
   background-color: #555;
   color: #fff;
   border-color: #ffd700;
-  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0.5rem 0.125rem rgba(255, 255, 255, 0.5);
 }
 .letter {
   object-fit: cover;
-  max-width: 496px;
+  max-width: 31rem;
   width: 100%;
 }
 .final-message {
   text-align: center;
-  margin-top: 20px;
-  font-size: 22px;
+  margin-top: 1.25rem;
+  font-size: 1.375rem;
   font-weight: bold;
   color: #f7c331;
 }

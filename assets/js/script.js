@@ -20,24 +20,53 @@ document.querySelectorAll("button[data-target]").forEach((button) => {
   });
 });
 
+// Player
 const playButton = document.querySelector(".play-button");
 const playIcon = playButton.querySelector("i");
 const audioPlayer = document.getElementById("backgroundAudio");
 
-// Початковий статус
 let isPlaying = false;
 
-playButton.addEventListener("click", () => {
+function updateIcon() {
   if (isPlaying) {
-    // Якщо грає, ставимо на паузу
-    audioPlayer.pause();
-    playIcon.classList.replace("fa-pause", "fa-play"); // Змінюємо іконку
+    playIcon.classList.replace("fa-play", "fa-pause");
   } else {
-    // Якщо не грає, запускаємо відтворення
-    audioPlayer.play().catch((error) => {
-      console.error("Відтворення заблоковане браузером:", error);
-    });
-    playIcon.classList.replace("fa-play", "fa-pause"); // Змінюємо іконку
+    playIcon.classList.replace("fa-pause", "fa-play");
   }
-  isPlaying = !isPlaying; // Перемикаємо статус
-});
+}
+
+function togglePlay() {
+  if (isPlaying) {
+    audioPlayer.pause();
+  } else {
+    audioPlayer
+      .play()
+      .catch((error) =>
+        console.error("Відтворення заблоковане браузером:", error)
+      );
+  }
+  isPlaying = !isPlaying;
+  updateIcon();
+}
+
+function resizePlayButton() {
+  if (window.innerWidth < 900) {
+    playButton.style.padding = "12px 15px";
+    playIcon.style.fontSize = "16px";
+  } else {
+    playButton.style.padding = "25px 28px";
+    playIcon.style.fontSize = "24px";
+  }
+}
+
+let resizeTimeout;
+function debounceResize() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(resizePlayButton, 200);
+}
+
+playButton.addEventListener("click", togglePlay);
+window.addEventListener("resize", debounceResize);
+
+resizePlayButton();
+updateIcon();
